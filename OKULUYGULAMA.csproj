@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49E690B8-1945-435F-9084-EC5BD5A772BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OKULUYGULAMA</RootNamespace>
+    <AssemblyName>OKULUYGULAMA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.FakeDb, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sitecore.FakeDb.2.0.1\lib\net471\Sitecore.FakeDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ogrencibilgileriModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrencibilgileriModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ogrencibilgileriModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrencibilgileriModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ogrencibilgileriModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrencibilgileriModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Ogrenciler.cs">
+      <DependentUpon>ogrencibilgileriModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OGRENCILISTESI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OGRENCILISTESI.Designer.cs">
+      <DependentUpon>OGRENCILISTESI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ogrenciListesiDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ogrenciListesiDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OGRENCİ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OGRENCİ.Designer.cs">
+      <DependentUpon>OGRENCİ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Okul.cs">
+      <DependentUpon>ogrencibilgileriModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Okulbilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Okulbilgileri.Designer.cs">
+      <DependentUpon>Okulbilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OkulModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkulModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SINIF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SINIF.Designer.cs">
+      <DependentUpon>SINIF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sql.cs" />
+    <Compile Include="Sınıf.cs">
+      <DependentUpon>ogrencibilgileriModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sınıfModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sınıfModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sınıfModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sınıfModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sınıfModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sınıfModel1.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OGRENCILISTESI.resx">
+      <DependentUpon>OGRENCILISTESI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OGRENCİ.resx">
+      <DependentUpon>OGRENCİ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okulbilgileri.resx">
+      <DependentUpon>Okulbilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SINIF.resx">
+      <DependentUpon>SINIF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ogrencibilgileriModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ogrencibilgileriModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ogrencibilgileriModel1.edmx.diagram">
+      <DependentUpon>ogrencibilgileriModel1.edmx</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet.xsc">
+      <DependentUpon>ogrenciListesiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet.xss">
+      <DependentUpon>ogrenciListesiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet1.xsc">
+      <DependentUpon>ogrenciListesiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet1.xss">
+      <DependentUpon>ogrenciListesiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet10.xsc">
+      <DependentUpon>ogrenciListesiDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet10.xss">
+      <DependentUpon>ogrenciListesiDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet11.xsc">
+      <DependentUpon>ogrenciListesiDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet11.xss">
+      <DependentUpon>ogrenciListesiDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet12.xsc">
+      <DependentUpon>ogrenciListesiDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet12.xss">
+      <DependentUpon>ogrenciListesiDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet2.xsc">
+      <DependentUpon>ogrenciListesiDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet2.xss">
+      <DependentUpon>ogrenciListesiDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet3.xsc">
+      <DependentUpon>ogrenciListesiDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet3.xss">
+      <DependentUpon>ogrenciListesiDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet4.xsc">
+      <DependentUpon>ogrenciListesiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet4.xss">
+      <DependentUpon>ogrenciListesiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet5.xsc">
+      <DependentUpon>ogrenciListesiDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet5.xss">
+      <DependentUpon>ogrenciListesiDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet6.xsc">
+      <DependentUpon>ogrenciListesiDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet6.xss">
+      <DependentUpon>ogrenciListesiDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet7.xsc">
+      <DependentUpon>ogrenciListesiDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet7.xss">
+      <DependentUpon>ogrenciListesiDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet8.xsc">
+      <DependentUpon>ogrenciListesiDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet8.xss">
+      <DependentUpon>ogrenciListesiDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet9.xsc">
+      <DependentUpon>ogrenciListesiDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ogrenciListesiDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ogrenciListesiDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ogrenciListesiDataSet9.xss">
+      <DependentUpon>ogrenciListesiDataSet9.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="OkulModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OkulModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OkulModel1.edmx.diagram">
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="sınıfModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>sınıfModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="sınıfModel1.edmx.diagram">
+      <DependentUpon>sınıfModel1.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listbullets_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listbullets_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contentautoarrange_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contentautoarrange_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addchartpane_32x32.png" />
+    <None Include="Resources\find_16x161.png" />
+    <None Include="Resources\customer_16x16.png" />
+    <None Include="Resources\customer_32x321.png" />
+    <None Include="Resources\customer_32x32.png" />
+    <None Include="Resources\find_16x16.png" />
+    <None Include="Resources\find_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ogrencibilgileriModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ogrencibilgileriModel1.edmx</DependentUpon>
+      <LastGenOutput>ogrencibilgileriModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ogrencibilgileriModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ogrencibilgileriModel1.edmx</DependentUpon>
+      <LastGenOutput>ogrencibilgileriModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+      <LastGenOutput>OkulModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OkulModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OkulModel1.edmx</DependentUpon>
+      <LastGenOutput>OkulModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="sınıfModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>sınıfModel1.edmx</DependentUpon>
+      <LastGenOutput>sınıfModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="sınıfModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>sınıfModel1.edmx</DependentUpon>
+      <LastGenOutput>sınıfModel1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

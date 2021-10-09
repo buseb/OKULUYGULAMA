@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ogrenciListesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Okul">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="okul_adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="silindi" Type="binary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sınıf">
+          <Key>
+            <PropertyRef Name="SinifId" />
+          </Key>
+          <Property Name="SinifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrenci_ad" Type="varchar" MaxLength="15" />
+          <Property Name="ogrenci_seviye" Type="char" MaxLength="3" />
+          <Property Name="silindi" Type="binary" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ogrenciListesiModelStoreContainer">
+          <EntitySet Name="Okul" EntityType="Self.Okul" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sınıf" EntityType="Self.Sınıf" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ogrenciListesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Okul">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="okul_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="silindi" Type="Binary" MaxLength="50" FixedLength="true" />
+          <NavigationProperty Name="Sınıf" Relationship="ogrenciListesiModel.OkulSınıf" FromRole="Okul" ToRole="Sınıf" />
+        </EntityType>
+        <EntityType Name="Sınıf">
+          <Key>
+            <PropertyRef Name="SinifId" />
+          </Key>
+          <Property Name="SinifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenci_ad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ogrenci_seviye" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="silindi" Type="Binary" MaxLength="50" FixedLength="true" />
+          <NavigationProperty Name="Okul" Relationship="ogrenciListesiModel.OkulSınıf" FromRole="Sınıf" ToRole="Okul" />
+        </EntityType>
+        <EntityContainer Name="ogrenciListesiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Okul" EntityType="Self.Okul" />
+          <EntitySet Name="Sınıf" EntityType="Self.Sınıf" />
+          <AssociationSet Name="OkulSınıf" Association="ogrenciListesiModel.OkulSınıf">
+            <End Role="Okul" EntitySet="Okul" />
+            <End Role="Sınıf" EntitySet="Sınıf" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="OkulSınıf">
+          <End Type="ogrenciListesiModel.Okul" Role="Okul" Multiplicity="1" />
+          <End Type="ogrenciListesiModel.Sınıf" Role="Sınıf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Okul">
+              <PropertyRef Name="OkulId" />
+            </Principal>
+            <Dependent Role="Sınıf">
+              <PropertyRef Name="OkulOkulId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ogrenciListesiModelStoreContainer" CdmEntityContainer="ogrenciListesiEntities1">
+          <EntitySetMapping Name="Okul">
+            <EntityTypeMapping TypeName="ogrenciListesiModel.Okul">
+              <MappingFragment StoreEntitySet="Okul">
+                <ScalarProperty Name="OkulId" ColumnName="OkulId" />
+                <ScalarProperty Name="okul_adi" ColumnName="okul_adi" />
+                <ScalarProperty Name="silindi" ColumnName="silindi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sınıf">
+            <EntityTypeMapping TypeName="ogrenciListesiModel.Sınıf">
+              <MappingFragment StoreEntitySet="Sınıf">
+                <ScalarProperty Name="SinifId" ColumnName="SinifId" />
+                <ScalarProperty Name="ogrenci_ad" ColumnName="ogrenci_ad" />
+                <ScalarProperty Name="ogrenci_seviye" ColumnName="ogrenci_seviye" />
+                <ScalarProperty Name="silindi" ColumnName="silindi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
